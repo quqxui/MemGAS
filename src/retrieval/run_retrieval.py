@@ -70,7 +70,7 @@ def main(args):
     
     in_data = json.load(open(f'../../data/process_data/{args.dataset}.json'))
     
-    if args.method == 'multigran':
+    if args.method == 'memgas':
         if os.path.exists(f"../../graph_cache/graph-{args.dataset}-{args.retriever}-{args.mem_threshold}-{args.n_components}.pt"):
             covid2graph = torch.load(f"../../graph_cache/graph-{args.dataset}-{args.retriever}-{args.mem_threshold}-{args.n_components}.pt")
         else:
@@ -125,7 +125,7 @@ def main(args):
                 scores = (q_emb @ turn_embeddings.T).squeeze()
                 rankings = scores.argsort(descending=True)
             
-            elif args.method == 'multigran':
+            elif args.method == 'memgas':
                 emb_list = [emb['sessions'], turn_embeddings, emb['summarys'],emb['keywords']]
                 soft_router_weights = multi_granularity_routing(args, q_emb, emb_list)
                 emb_list = [w * v for w, v in zip(soft_router_weights, emb_list)]
