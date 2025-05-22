@@ -50,7 +50,7 @@ python3 run_retrieval.py --dataset locomo10 --retriever contriever --method hybr
 python3 run_retrieval.py \
   --dataset locomo10 \
   --retriever contriever \
-  --method multigran \
+  --method memgas \
   --num_seednodes 15 \
   --mem_threshold 30 \
   --damping 0.1 \
@@ -65,7 +65,7 @@ To conduct QA experiements, run:
 ```python
 cd src/generation/
 
-python generation.py --dataset locomo10 --retriever contriever --model_name_or_path gpt-4o-mini --topk 3 --method multigran
+python generation.py --dataset locomo10 --retriever contriever --model_name_or_path gpt-4o-mini --topk 3 --method memgas
 
 ```
 
@@ -77,13 +77,13 @@ Evaluating with GPT4o:
 The code only requires --eval_file for geneated path, --model_name_or_path for evaluation:
 ```python
 cd src/evaluation/
-python llm_judge_single.py --model_name_or_path gpt-4o --eval_file  locomo10-contriever-multigran_filter-gpt-4o-mini-topk_3.jsonl
+python llm_judge_single.py --model_name_or_path gpt-4o --eval_file  locomo10-contriever-memgas_filter-gpt-4o-mini-topk_3.jsonl
 
 ```
 
 Evaluating different query types:
 ```python
 cd src/evaluation/
-python eval_query_type.py --eval_file ../../generation_logs/locomo10-contriever-multigran_filter-gpt-4o-mini-topk_3.jsonl
+python eval_query_type.py --eval_file ../../generation_logs/locomo10-contriever-memgas_filter-gpt-4o-mini-topk_3.jsonl
 ```
 
