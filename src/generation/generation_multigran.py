@@ -19,7 +19,7 @@ Question Date: {question_date}
 Question: {question}
 """
 # locomo10 longmemeval_s longmemeval_m LongMTBench+
-# python generation_multigran.py --dataset longmemeval_m --retriever contriever --model_name_or_path gpt-4o-mini --topk 3 --method multigran
+# python generation_multigran.py --dataset longmemeval_m --retriever contriever --model_name_or_path gpt-4o-mini --topk 3 --method memgas
 
 parser = argparse.ArgumentParser(description="long-term conversation evaluation")
 parser.add_argument('--dataset', type=str, required=True)
