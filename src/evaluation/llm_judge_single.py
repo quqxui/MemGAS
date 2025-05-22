@@ -30,8 +30,8 @@ Is the model response correct? Answer [[yes]] or [[no]] only.
 """
 
 # locomo10 longmemeval_s longmemeval_m LongMTBench+
-# multigran_filter
-# python llm_judge_single.py --model_name_or_path gpt-4o --eval_file  longmemeval_s-contriever-raptor-gpt-4o-mini-topk_3.jsonl
+# memgas_filter
+# python llm_judge_single.py --model_name_or_path gpt-4o --eval_file  longmemeval_s-contriever-memgas_filter-gpt-4o-mini-topk_3.jsonl
 
 
 parser = argparse.ArgumentParser(description="long-term conversation evaluation")
