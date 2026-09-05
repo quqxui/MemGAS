@@ -9,6 +9,20 @@
 
 Our work has been accepted to **ICLR 2026**: *From Single to Multi-Granularity: Toward Long-Term Memory Association and Selection of Conversational Agents*.
 
+## Use it in a coding agent
+
+MemGAS ships as a long-term memory plugin for [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) (dsh). Your agent remembers a project's conventions, decisions and pitfalls across sessions, and keeps that memory organized as you work:
+
+```sh
+dsh plugin --profile web add dsh-memgas
+```
+
+- **Plugin repository: [quqxui/dsh-memgas](https://github.com/quqxui/dsh-memgas)** — installation, configuration and design notes
+- Also available over MCP as [`memgas-mcp`](https://www.npmjs.com/package/memgas-mcp), so Claude Code, Codex and other hosts can share the same memory store
+
+That plugin is an independent TypeScript implementation of the method, built for everyday use. The Python code in this repository remains the reference implementation for the paper's experiments.
+
+
 ### Environment
     conda create -n memgas python=3.9
     conda activate memgas
